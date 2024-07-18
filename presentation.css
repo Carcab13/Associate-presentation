@@ -1,0 +1,14 @@
+.reveal img{
+    border-radius: 5px;
+}
+.reveal{
+    background-color: black;
+}
+.logo {
+    position: fixed;
+    top: 10px;   /* Adjust as needed */
+    left: 10px;  /* Adjust as needed */
+    width: 200px; /* Adjust as needed */
+    height: auto;
+    z-index: 1000; /* Make sure the logo is above other elements */
+}

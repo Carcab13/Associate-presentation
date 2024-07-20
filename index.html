@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Assosiate handbook</title>
+    <title>Associate Handbook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/white.min.css" id="theme">
@@ -10,7 +10,6 @@
 </head>
 <body>
     <img src="logo.png" alt="Logo" class="logo">
-
 
     <div class="reveal">
         <div class="slides">
@@ -22,17 +21,23 @@
             </section>
             <section>
                 <img src="2.png">
-            </section>            <section>
+            </section>
+            <section>
                 <img src="3.png">
-            </section>            <section>
+            </section>
+            <section>
                 <img src="4.png">
-            </section>            <section>
+            </section>
+            <section>
                 <img src="5.png">
-            </section>            <section>
+            </section>
+            <section>
                 <img src="6.png">
-            </section>            <section>
+            </section>
+            <section>
                 <img src="7.png">
-            </section>            </section>            <section>
+            </section>
+            <section>
                 <img src="8.png">
             </section>
         </div>
@@ -46,7 +51,30 @@
             slideNumber: true,
             history: true,
             center: true,
-            transition: 'zoom' // None/Fade/Slide/Convex/Concave/Zoom
+            transition: 'zoom'
+        });
+
+        // Retrieve session ID from URL
+        function getSessionIdFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('session_id');
+        }
+
+        // Redirect to an alternate site if the session ID is missing or invalid
+        function redirectToAlternateSite() {
+            window.location.href = 'https://google.com'; // Replace with the alternate site URL
+        }
+
+        // Check session ID on page load
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const sessionId = getSessionIdFromUrl();
+
+            if (!sessionId) {
+                redirectToAlternateSite();
+            } else {
+                // Optionally, add logic here to validate the session ID
+                console.log('Valid session ID:', sessionId);
+            }
         });
     </script>
 </body>

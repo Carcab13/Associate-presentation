@@ -68,8 +68,10 @@
         // Check session ID on page load
         document.addEventListener('DOMContentLoaded', (event) => {
             const sessionId = getSessionIdFromUrl();
+            console.log('Session ID from URL:', sessionId); // Debug output
 
             if (!sessionId) {
+                console.log('No session ID found, redirecting...');
                 redirectToAlternateSite();
             } else {
                 // Optionally, add logic here to validate the session ID
